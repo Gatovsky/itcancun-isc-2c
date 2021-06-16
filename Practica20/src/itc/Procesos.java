@@ -2,21 +2,20 @@ package itc;
 
 import javax.swing.JOptionPane;
 import java.util.ArrayList;
-import java.util.InputMismatchException;
 
 public class Procesos {
 
-    public static int[] guardarArrayNum() throws NumberFormatException, ArrayIndexOutOfBoundsException, InputMismatchException{
+    public static int[] guardarArrayNum() throws NumberFormatException, ArrayIndexOutOfBoundsException{
         int[] arrayNumeros = new int[10];
 
-        for (int i = 1; i <= 10; i++){
+        for (int i = 0; i <= arrayNumeros.length-1; i++){
             arrayNumeros[i] = Integer.parseInt(JOptionPane.showInputDialog("Ingresa un número al array\nen la posición "+ i));
         }
         return arrayNumeros;
     }
 
 
-    public static ArrayList<Integer> guardarArrayListNum() throws InputMismatchException {
+    public static ArrayList<Integer> guardarArrayListNum() throws NumberFormatException {
         ArrayList<Integer> arrayListNum = new ArrayList<>();
         int contador = 1;
         int numero;
@@ -30,6 +29,7 @@ public class Procesos {
         return arrayListNum;
     }
 
+    //---Sobre carga de métodos para sumar y/o multiplicar; ya sea que reciban un Array o ArraList
     public static int sumarNumeros(ArrayList<Integer> arrayListNum) throws ArithmeticException{
         int suma = 0;
         for (int numero : arrayListNum){
@@ -40,8 +40,8 @@ public class Procesos {
 
     public static int sumarNumeros(int[] arrayNum) throws ArithmeticException{
         int suma = 0;
-        for (int numero = 1; numero <= arrayNum.length; numero++)
-            suma += numero;
+        for (int numero = 0; numero <= arrayNum.length-1; numero++)
+            suma += arrayNum[numero];
         return suma;
     }
 
@@ -55,8 +55,8 @@ public class Procesos {
 
     public static int productoNumeros(int[] arrayNum) throws ArithmeticException{
         int producto = 1;
-        for (int numero = 1; numero <= arrayNum.length; numero++){
-            producto *= numero;
+        for (int numero = 0; numero <= arrayNum.length-1; numero++){
+            producto *= arrayNum[numero];
         }
         return producto;
     }

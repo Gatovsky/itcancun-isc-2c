@@ -1,13 +1,14 @@
 package itc;
 
 import javax.swing.JOptionPane;
-import java.util.InputMismatchException;
+
 
 public class Main {
 
     public static void main(String[] args){
         int suma;
         int producto;
+        boolean escape = false;
 
        do{
            try {
@@ -15,11 +16,16 @@ public class Main {
                suma = Procesos.sumarNumeros(numeros);
                producto = Procesos.productoNumeros(numeros);
 
-               JOptionPane.showMessageDialog(null, " la suma de los números es" + suma);
-               JOptionPane.showMessageDialog(null, "El producto de los números es" + producto);
+               JOptionPane.showMessageDialog(null, " la suma de los números es: " + suma);
+               JOptionPane.showMessageDialog(null, "El producto de los números es: " + producto);
+
+               char salir = JOptionPane.showInputDialog("salir s/n'").charAt(0);
+               if(salir == 's' || salir == 'S'){
+                   escape = true;
+               }
 
            }catch (NumberFormatException e){
-               JOptionPane.showMessageDialog(null, "Tipo de dato inválido. No se puede convertir a Integer "+ e.getMessage());
+               JOptionPane.showMessageDialog(null, "Tipo de dato inválido. No se puede convertir a Integer el dato:\n"+ e.getMessage());
 
            }catch (ArrayIndexOutOfBoundsException e){
                JOptionPane.showMessageDialog(null, "Está intentando agregar un elemento fuera de rango." +
@@ -28,7 +34,7 @@ public class Main {
            } catch (ArithmeticException e){
                JOptionPane.showMessageDialog(null, "Error aritmético " + e.getMessage());
            }
-       }while (true);
+       }while (!escape);
 
        }
 
