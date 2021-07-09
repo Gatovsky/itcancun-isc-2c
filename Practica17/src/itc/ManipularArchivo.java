@@ -23,6 +23,7 @@ public class ManipularArchivo extends File{
         fr.close();
     }
 
+    @Override
     public void escribirArchivo() throws IOException{
         //--- al pasar el parámetro true se evita sobreescribir el archivo
         FileWriter fw = new FileWriter((getDirArchivo()), true);
