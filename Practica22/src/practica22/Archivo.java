@@ -1,4 +1,4 @@
-package itc;
+package practica22;
 
 import java.io.IOException;
 import java.util.ArrayList;

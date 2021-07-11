@@ -1,8 +1,12 @@
-package itc;
+package practica22;
 
 import java.awt.Desktop;
 import java.io.*;
 import java.util.ArrayList;
+import java.io.FileReader;
+import java.io.BufferedReader;
+import java.io.FileWriter;
+import java.io.BufferedWriter;
 
 public class ManipularArchivo extends Archivo{
 

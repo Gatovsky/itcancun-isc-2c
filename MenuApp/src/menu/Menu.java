@@ -12,7 +12,7 @@ public class Menu {
         ProcessBuilder pb;
         for(Map.Entry<Byte,String> entry : programas.entrySet()){
             if(selPrograma == entry.getKey()){
-                pb = new ProcessBuilder("java", baseDir+entry.getValue());
+                pb = new ProcessBuilder("java","-cp", "/home/hector/itcancun-isc-2c/Practica22/out/artifacts/Practica22_jar/Practica22.jar", baseDir+entry.getValue());
                 Process startP = pb.inheritIO().start();
                 startP.waitFor();
             }
@@ -60,7 +60,7 @@ public class Menu {
                 programas = new HashMap<>();
                 programas.put((byte) 1, "Practica20/src/itc/Main.java");
                 programas.put((byte) 2, "Practica20-2/src/itc/Main.java");
-                programas.put((byte)3, "Practica22/src/itc/Main.java");
+                programas.put((byte)3, "Practica22/src/practica22/Main.java");
 
                 do{
                     selPrograma = Byte.parseByte(JOptionPane.showInputDialog("1 - Práctica 20\n" +

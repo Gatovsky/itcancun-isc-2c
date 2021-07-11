@@ -1,4 +1,4 @@
-package itc;
+package practica22;
 
 public class RegistroVehiculo {
     private String matricula;

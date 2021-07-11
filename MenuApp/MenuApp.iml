@@ -10,23 +10,19 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="file://$MODULE_DIR$/../Practica22" />
+          <root url="jar://$MODULE_DIR$/../Practica20-2/out/artifacts/Practica20_2_jar/Practica20-2.jar!/" />
         </CLASSES>
         <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/../Practica22/src" />
-        </SOURCES>
+        <SOURCES />
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="file://$MODULE_DIR$/../Practica20-2" />
+          <root url="jar://$MODULE_DIR$/../Practica22/out/artifacts/Practica22_jar/Practica22.jar!/" />
         </CLASSES>
         <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/../Practica20-2/src" />
-        </SOURCES>
+        <SOURCES />
       </library>
     </orderEntry>
   </component>

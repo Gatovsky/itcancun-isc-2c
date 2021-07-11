@@ -1,4 +1,4 @@
-package itc;
+package practica22;
 
 /*
 Crea una aplicación que almacene los datos básicos de un vehículo como la matricula(String),
@@ -16,11 +16,11 @@ import java.util.ArrayList;
 public class Main {
 
 
-    public static ArrayList<RegistroVehiculo> menu(int sel){
+    public static ArrayList<RegistroVehiculo> menu(int sel) {
         ArrayList<RegistroVehiculo> arrayListRegistroVehiculo = new ArrayList<>();
         ManipularArchivo dato;
 
-        switch (sel){
+        switch (sel) {
             case 1:
                 try {
                     RegistroVehiculo registro = new RegistroVehiculo();
@@ -35,12 +35,12 @@ public class Main {
 
                     dato.escribirArchivo(arrayListRegistroVehiculo);
 
-                }catch (NumberFormatException e) {
+                } catch (NumberFormatException e) {
                     JOptionPane.showMessageDialog(null, e.getMessage());
-                }catch (FileNotFoundException e){
-                    JOptionPane.showMessageDialog(null, "error: "+e.getMessage());
-                }catch (IOException e){
-                    JOptionPane.showMessageDialog(null, "Error de entrada "+e.getMessage());
+                } catch (FileNotFoundException e) {
+                    JOptionPane.showMessageDialog(null, "error: " + e.getMessage());
+                } catch (IOException e) {
+                    JOptionPane.showMessageDialog(null, "Error de entrada " + e.getMessage());
                 }
 
                 break;
@@ -49,9 +49,9 @@ public class Main {
                     dato = new ManipularArchivo();
                     dato.setRuta(JOptionPane.showInputDialog("Ruta del Archivo"));
                     dato.leerArchivo();
-                }catch (FileNotFoundException e){
-                    JOptionPane.showMessageDialog(null, "No existe el fichero o directorio" +e.getLocalizedMessage());
-                }catch (IOException e){
+                } catch (FileNotFoundException e) {
+                    JOptionPane.showMessageDialog(null, "No existe el fichero o directorio" + e.getLocalizedMessage());
+                } catch (IOException e) {
                     JOptionPane.showMessageDialog(null, e.getMessage());
                 }
                 break;
@@ -61,7 +61,7 @@ public class Main {
                     dato.setRuta(JOptionPane.showInputDialog("Ruta del Archivo"));
                     dato.abrirArchivo(dato.getRuta());
 
-                }catch (IOException e){
+                } catch (IOException e) {
                     JOptionPane.showMessageDialog(null, e.getMessage());
                 }
                 break;
@@ -71,31 +71,27 @@ public class Main {
     }
 
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         int sel;
         boolean salir = false;
 
-        do{
+        do {
             try {
                 sel = Integer.parseInt(JOptionPane.showInputDialog("1 - Ingresar Datos\n" +
                         "2 - Ver Datos\n" +
-                        "3 - Abrir Archivo\n"+
+                        "3 - Abrir Archivo\n" +
                         "4 - Salir"));
-                if(sel == 4){
+                if (sel == 4) {
                     salir = true;
                 }
-                if(sel >=1 & sel <=3){
+                if (sel >= 1 & sel <= 3) {
                     menu(sel);
                 }
-            }catch (NumberFormatException e){
+            } catch (NumberFormatException e) {
                 JOptionPane.showMessageDialog(null, e.getMessage());
             }
 
-        }while (!salir);
+        } while (!salir);
     }
 
-    public static void Dependencias(){
-        itc.Main.class.getClasses();
-
-    }
 }
