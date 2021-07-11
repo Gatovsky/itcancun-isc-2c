@@ -12,7 +12,7 @@ public class Menu {
         ProcessBuilder pb;
         for(Map.Entry<Byte,String> entry : programas.entrySet()){
             if(selPrograma == entry.getKey()){
-                pb = new ProcessBuilder("java","-cp", "/home/hector/itcancun-isc-2c/Practica22/out/artifacts/Practica22_jar/Practica22.jar", baseDir+entry.getValue());
+                pb = new ProcessBuilder("java","-cp", "/home/hector/itcancun-isc-2c/Practica20-2/out/artifacts/Practica20_2_jar/Practica20-2.jar", baseDir+entry.getValue());
                 Process startP = pb.inheritIO().start();
                 startP.waitFor();
             }
@@ -58,8 +58,8 @@ public class Menu {
 
                 //--llenado del map
                 programas = new HashMap<>();
-                programas.put((byte) 1, "Practica20/src/itc/Main.java");
-                programas.put((byte) 2, "Practica20-2/src/itc/Main.java");
+                programas.put((byte) 1, "Practica20/src/practica20/Main.java");
+                programas.put((byte) 2, "Practica20-2/src/practica20_2/Main.java");
                 programas.put((byte)3, "Practica22/src/practica22/Main.java");
 
                 do{
@@ -86,14 +86,16 @@ public class Menu {
         boolean salir = false;
 
         do {
-            sel = Byte.parseByte(JOptionPane.showInputDialog(""+
-                    "1 - Programas unidad 3\n" +
-                    "2 - Programas unidad 6\n" +
-                    "3 - Salir"));
-            if(sel == 3){
+            sel = Byte.parseByte(JOptionPane.showInputDialog("1 - Programas Herencia\n" +
+                    "2 - Programas Polimorfismo\n" +
+                    "3 - Programas Interfaces\n"+
+                    "4 - Programas Excepciones\n" +
+                    "5 - Programas Archivos\n" +
+                    "6 - Salir"));
+            if(sel == 6){
                 salir = true;
             }
-            if(sel >= 1 && sel <=2){
+            if(sel >= 1 && sel <=5){
                 menu(sel);
             }
         }while (!salir);
