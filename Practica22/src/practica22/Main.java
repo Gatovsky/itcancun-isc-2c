@@ -7,6 +7,7 @@ Los datos anteriores se pedirán por teclado y se irán añadiendo al archivo.
 Muestra todos los datos de cada coche.
  */
 
+
 import javax.swing.JOptionPane;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -91,5 +92,10 @@ public class Main {
             }
 
         }while (!salir);
+    }
+
+    public static void Dependencias(){
+        itc.Main.class.getClasses();
+
     }
 }
