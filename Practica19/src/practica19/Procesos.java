@@ -1,4 +1,4 @@
-package practica20;
+package practica19;
 
 import javax.swing.JOptionPane;
 import java.util.ArrayList;

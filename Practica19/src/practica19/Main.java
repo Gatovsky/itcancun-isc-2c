@@ -1,4 +1,4 @@
-package practica20;
+package practica19;
 /*
 Programa que pide n números al usuario y los guarda en un Array. el guardado de dichos números debe ser con un bucle
 indefinido, de tal manera que al tratar de introducir un elemento más cuando el arreglo ha alcanzado su límite de índices

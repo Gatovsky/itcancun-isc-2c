@@ -1,5 +1,7 @@
 package Polimorfismo;
 
+/*Programa basado en el polimorfismo por inclusión*/
+
 public class Main {
 
     public static void main(String[] args){

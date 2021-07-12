@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Polimorfismo_Inclusion:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Polimorfismo_Inclusion_jar</output-path>
+    <root id="archive" name="Polimorfismo_Inclusion.jar">
+      <element id="module-output" name="Polimorfismo_Inclusion" />
+    </root>
+  </artifact>
+</component>
