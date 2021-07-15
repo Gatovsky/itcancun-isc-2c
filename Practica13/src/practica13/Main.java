@@ -1,4 +1,4 @@
-package practica14;
+package practica13;
 
 /*
 * Práctica de uso de interfaces*/

@@ -1,4 +1,4 @@
-package practica14;
+package practica13;
 
 public interface InterfaceVehiculo {
     final int VELOCIDAD_MAXIMA=160;

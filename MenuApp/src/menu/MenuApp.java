@@ -4,9 +4,7 @@ import javax.swing.JOptionPane;
 import java.io.IOException;
 import java.util.InputMismatchException;
 
-
-
-public class Menu {
+public class MenuApp {
 
     public static void main(String[] args)throws Exception{
         byte sel;
@@ -19,14 +17,14 @@ public class Menu {
                         "3 - Programas Interfaces\n"+
                         "4 - Programas Excepciones\n" +
                         "5 - Programas Archivos\n" +
-                        "6 - Salir"));
+                        "6 - Finalizar Programa"));
                 if(sel == 6){
                     salir = true;
                 }
                 if(sel >= 1 && sel <=5){
                     MenuProcess.menu(sel);
                 }
-            }catch (NumberFormatException | InputMismatchException | InterruptedException | IOException e){
+            }catch (NumberFormatException | InputMismatchException | InterruptedException |IndexOutOfBoundsException | IOException e){
                 JOptionPane.showMessageDialog(null, e.getMessage());
             }
         }while (!salir);

@@ -2,12 +2,11 @@ package menu;
 
 import javax.swing.JOptionPane;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 
 public class MenuProcess {
 
-    private static void buscarPrograma(String baseDir, byte selPrograma, Map<Byte, String> programas) throws IOException, InterruptedException {
+
+    /*private static void buscarPrograma(String baseDir, byte selPrograma, Map<Byte, String> programas) throws IOException, InterruptedException {
         ProcessBuilder pb;
         for(Map.Entry<Byte,String> entry : programas.entrySet()){
             if(selPrograma == entry.getKey()){
@@ -16,6 +15,22 @@ public class MenuProcess {
                 startP.waitFor();
             }
         }
+    }*/
+
+    private static void buscarPrograma(String baseDir, byte selPrograma, String[][] programas) throws IOException, InterruptedException, IndexOutOfBoundsException{
+        ProcessBuilder pb;
+        String jarFile = "";
+        String javaFile = "";
+        for (String[] pP : programas) {
+            if (pP == programas[selPrograma - 1]) {
+                jarFile = pP[0];
+                javaFile = pP[1];
+                break;
+            }
+        }
+        pb = new ProcessBuilder("java", "-cp", baseDir+jarFile, baseDir+javaFile);
+        Process startProcess = pb.inheritIO().start();
+        startProcess.waitFor();
     }
 
 
@@ -24,46 +39,80 @@ public class MenuProcess {
         byte selPrograma = 0;
         boolean salirMenu = false;
 
-        Map<Byte, String> programas;
         baseDir = "/home/hector/itcancun-isc-2c/";
 
         switch (sel){
             case 1:
-                //--Unidad 3
-
-                //--llenado del map
-                programas = new HashMap<>();
-                programas.put((byte) 1, "Practica4/src/itc/Main.java");
-                programas.put((byte) 2, "Practica8/src/itc/Main.java");
-                programas.put((byte) 3, "Practica9/src/itc/Main.java");
+                //--Programas Herencia
 
                 do{
-                    selPrograma = Byte.parseByte(JOptionPane.showInputDialog("1 - Práctica 04\n" +
-                            "2 - Práctica 08\n" +
-                            "3 - Práctica 09\n" +
-                            "4 - Salir del menú"));
-                    if(selPrograma == 4){
+                    selPrograma = Byte.parseByte(JOptionPane.showInputDialog("1 - Práctica 9\n" +
+                            "2 - Salir del submenú"));
+                    if(selPrograma == 2){
                         salirMenu = true;
                     }
-                    if(selPrograma >= 1 && selPrograma <=3){
+                    if(selPrograma == 1){
 
-                        buscarPrograma(baseDir, selPrograma, programas);
+                        buscarPrograma(baseDir, selPrograma, DirProgramas.programas(sel));
                     }
 
                 }while (!salirMenu);
                 break;
             case 2:
-                //---Unidad 6
-
-                //--llenado del map
-                programas = new HashMap<>();
-                programas.put((byte) 1, "Practica20/src/practica20/Main.java");
-                programas.put((byte) 2, "Practica20-2/src/practica20_2/Main.java");
-                programas.put((byte)3, "Practica22/src/practica22/Main.java");
+                //--Programas Polimorfismo
 
                 do{
-                    selPrograma = Byte.parseByte(JOptionPane.showInputDialog("1 - Práctica 20\n" +
-                            "2 - Práctica 20_2\n"+
+                    selPrograma = Byte.parseByte(JOptionPane.showInputDialog("1 - Práctica 10\n" +
+                            "2 - Práctica Polimorfismo Inclusion\n" +
+                            "3 - Salir del submenú"));
+                    if(selPrograma == 3){
+                        salirMenu = true;
+                    }
+                    if(selPrograma >= 1 && selPrograma <=2){
+
+                        buscarPrograma(baseDir, selPrograma, DirProgramas.programas(sel));
+                    }
+
+                }while (!salirMenu);
+                break;
+            case 3:
+                //--Programas Interfaces
+                do{
+                    selPrograma = Byte.parseByte(JOptionPane.showInputDialog("1 - Práctica 13\n" +
+                            "2 - Práctica 14\n" +
+                            "3 - Salir del submenú"));
+                    if(selPrograma == 3){
+                        salirMenu = true;
+                    }
+                    if(selPrograma >= 1 && selPrograma <=2){
+
+                        buscarPrograma(baseDir, selPrograma, DirProgramas.programas(sel));
+                    }
+
+                }while (!salirMenu);
+                break;
+            case 4:
+                do{
+                    selPrograma = Byte.parseByte(JOptionPane.showInputDialog("1 - Práctica 17\n" +
+                            "2 - Práctica 18\n" +
+                            "3 - Práctica 19\n"+
+                            "4 . Salir del submenú"));
+                    if(selPrograma == 4){
+                        salirMenu = true;
+                    }
+                    if(selPrograma >= 1 && selPrograma <=3){
+
+                        buscarPrograma(baseDir, selPrograma, DirProgramas.programas(sel));
+                    }
+
+                }while (!salirMenu);
+                break;
+            case 5:
+                //---Programas Archivos
+
+                do{
+                    selPrograma = Byte.parseByte(JOptionPane.showInputDialog("1 - Práctica 20_2\n"+
+                            "2 - Práctica 21\n" +
                             "3 - Práctica 22\n" +
                             "4 - Salir del submenú"));
                     if(selPrograma == 4){
@@ -71,7 +120,7 @@ public class MenuProcess {
                     }
                     if(selPrograma >=1 && selPrograma <= 3){
 
-                        buscarPrograma(baseDir, selPrograma, programas);
+                        buscarPrograma(baseDir, selPrograma, DirProgramas.programas(sel));
                     }
 
                 }while (!salirMenu);

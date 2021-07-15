@@ -1,6 +1,6 @@
 package practica14;
 
-import javax.swing.*;
+import javax.swing.JOptionPane;
 
 public class Persona implements Cantante {
 

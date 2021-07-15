@@ -1,4 +1,4 @@
-package practica14;
+package practica13;
 
 public class Automovil extends Vehiculo {
     public Automovil(int v, boolean e, String ns, int ll, int p, String c, int cp, int ve) {

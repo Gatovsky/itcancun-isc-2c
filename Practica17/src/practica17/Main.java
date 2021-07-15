@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
 import java.io.IOException;
 
 
-public class App {
+public class Main {
 
     public static ManipularArchivo menu(int sel){
         ManipularArchivo file = null;
