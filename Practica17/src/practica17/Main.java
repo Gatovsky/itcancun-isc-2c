@@ -54,5 +54,7 @@ public class Main {
             }
         }while (!salir);
 
+        System.out.println();
+
     }
 }

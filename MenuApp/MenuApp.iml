@@ -37,15 +37,6 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../Practica17/out/artifacts/Practica17_jar/Practica17.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" exported="">
-      <library>
-        <CLASSES>
           <root url="jar://$MODULE_DIR$/../Practica18/out/artifacts/Practica18_jar/Practica18.jar!/" />
         </CLASSES>
         <JAVADOC />
@@ -101,6 +92,15 @@
       <library>
         <CLASSES>
           <root url="jar://$MODULE_DIR$/../Polimorfismo_Inclusion/out/artifacts/Polimorfismo_Inclusion_jar/Polimorfismo_Inclusion.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../Practica17/out/artifacts/Practica17_jar/Practica17.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
